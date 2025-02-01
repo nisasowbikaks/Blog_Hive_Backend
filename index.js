@@ -5,13 +5,10 @@ const cors = require('cors');
 const nodemailer = require('nodemailer');  // Import Nodemailer
 const app = express();
 
-app.use(cors({
-    origin: 'http://localhost:3000', 
-    credentials: true
-}));
+app.use(cors());
 
 app.use(express.json());
-mongoose.connect('mongodb://127.0.0.1:27017/Main_Blog', {
+mongoose.connect('mongodb+srv://nisasowbikaks:<db_password>@cluster0.dlb1a.mongodb.net/', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 }).then(() => console.log('Connected to MongoDB'))
